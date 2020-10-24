@@ -15,3 +15,4 @@ A simple Todo App designed with the help of HTML/CSS & Javascript.
 
 ## Tutorial Videos
 - Part 1 - UI Design in Figma [Open in Youtube](https://youtu.be/B9P1nCaW2v8)
+- Part 2 - UI Development in HTML/CSS [Open in Youtube](https://youtu.be/87Y64P1zkfk)
