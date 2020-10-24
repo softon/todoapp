@@ -51,10 +51,26 @@ htmlBody.addEventListener('click', function(e){
 htmlBody.addEventListener('dblclick', function(e){
     if(e.target.nodeName=='TD'){
         let tr = e.target.parentNode;
-        todos.splice(tr.firstElementChild.firstElementChild.id, 1);
-        renderTodo();
-        calculateTodoStatus();
+        let deleteBtn = document.querySelector(".delete-btn");
+        deleteBtn.dataset.id = tr.firstElementChild.firstElementChild.id;
+        let confirmModal = document.querySelector(".confirm-modal");
+        confirmModal.classList.remove('hide-modal');        
     }
+});
+
+document.querySelector(".cancel-btn").addEventListener('click', function (e){
+    let confirmModal = document.querySelector(".confirm-modal");
+    confirmModal.classList.add('hide-modal');
+});
+
+document.querySelector(".delete-btn").addEventListener('click', function (e){
+    let id = e.target.dataset.id;
+    todos.splice(id, 1);
+    renderTodo();
+    calculateTodoStatus();
+    
+    let confirmModal = document.querySelector(".confirm-modal");
+    confirmModal.classList.add('hide-modal');
 });
 
 
